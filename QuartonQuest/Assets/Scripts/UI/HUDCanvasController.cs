@@ -37,11 +37,13 @@ public class HUDCanvasController : MonoBehaviour
             case GameCoreController.GameTurnState.OPPONENT:
                 return $"{OpponentName}'s Turn";
             case GameCoreController.GameTurnState.PLAYERWON:
-            case GameCoreController.GameTurnState.OPPONENTFORFEIT:
                 return $"You won!";
+            case GameCoreController.GameTurnState.OPPONENTFORFEIT:
+                return $"{OpponentName} forfeited!";
             case GameCoreController.GameTurnState.OPPONENTWON:
-            case GameCoreController.GameTurnState.PLAYERFORFEIT:   
                 return $"{OpponentName} won!";
+            case GameCoreController.GameTurnState.PLAYERFORFEIT:
+                return "You forfeited";
             case GameCoreController.GameTurnState.GAMETIED:
                 return "Tie!";
             default:

@@ -28,7 +28,7 @@ namespace Networking
         private const string MASTERPLAYERNAMEPROPERTY = "MasterPlayerName";
         private Dictionary<string, GameObject> rooms;
         private Dictionary<string, RoomInfo> cachedRooms;
-        private string sceneToLoad;
+        private string sceneToLoad = GUIController.SceneNames.Level1;
 
         private void Awake() => PhotonNetwork.AutomaticallySyncScene = true;
 
