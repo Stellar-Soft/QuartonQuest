@@ -52,6 +52,7 @@ namespace Networking
 
         private System.Collections.IEnumerator CancelMatchmaking()
         {
+            cachedRooms.Clear();
             DestroyAllRoomListItems();
             Disconnect();
             while (PhotonNetwork.IsConnected)
@@ -65,8 +66,11 @@ namespace Networking
             if (PhotonNetwork.CurrentRoom != null && PhotonNetwork.IsMasterClient)
             {
                 Debug.Log("Leaving Room: " + PhotonNetwork.CurrentRoom.Name);
-                PhotonNetwork.CurrentRoom.IsVisible = false;
-                PhotonNetwork.CurrentRoom.IsOpen = false;
+                if (PhotonNetwork.IsMasterClient)
+                {
+                    PhotonNetwork.CurrentRoom.IsVisible = false;
+                    PhotonNetwork.CurrentRoom.IsOpen = false;
+                }
                 PhotonNetwork.LeaveRoom();
             }
 
@@ -161,19 +165,16 @@ namespace Networking
         {
             foreach (RoomInfo roomInfo in cachedRooms.Values)
             {
-                if (!rooms.ContainsKey(roomInfo.Name) && roomInfo.IsOpen && roomInfo.IsVisible)
-                {
-                    Debug.Log("Creating room list item...");
-                    GameObject newItem = Instantiate<GameObject>(RoomListItemPrefab, RoomListItemsPanel.transform, false);
-                    RoomListItemController controller = newItem.GetComponent<RoomListItemController>();
-                    rooms.Add(roomInfo.Name, newItem);
-                    controller.RoomId = roomInfo.Name;
-                    Debug.Log(roomInfo.CustomProperties[MASTERPLAYERNAMEPROPERTY]);
-                    string opponent = roomInfo.CustomProperties[MASTERPLAYERNAMEPROPERTY].ToString();
-                    controller.MasterPlayerName = opponent;
-                    controller.buttonText.text = controller.MasterPlayerName;
-                    controller.button.onClick.AddListener(delegate { OnRoomButtonClicked(roomInfo.Name, opponent); });
-                }
+                Debug.Log("Creating room list item...");
+                GameObject newItem = Instantiate<GameObject>(RoomListItemPrefab, RoomListItemsPanel.transform, false);
+                RoomListItemController controller = newItem.GetComponent<RoomListItemController>();
+                rooms.Add(roomInfo.Name, newItem);
+                controller.RoomId = roomInfo.Name;
+                Debug.Log(roomInfo.CustomProperties[MASTERPLAYERNAMEPROPERTY]);
+                string opponent = roomInfo.CustomProperties[MASTERPLAYERNAMEPROPERTY].ToString();
+                controller.MasterPlayerName = opponent;
+                controller.buttonText.text = controller.MasterPlayerName;
+                controller.button.onClick.AddListener(delegate { OnRoomButtonClicked(roomInfo.Name, opponent); });
             }
         }
 
@@ -269,8 +270,8 @@ namespace Networking
 
         public override void OnJoinRoomFailed(short returnCode, string message)
         {
-            base.OnJoinRoomFailed(returnCode, message);
-            Debug.Log("Client failed to join the room");
+            //base.OnJoinRoomFailed(returnCode, message);
+            Debug.Log("Client failed to join the room. " + message);
             JoinPanelController jpc = JoinGamePanel.GetComponent<JoinPanelController>();
             jpc.ResetStatus();
             jpc.EnableCancelButton();
@@ -289,6 +290,8 @@ namespace Networking
                     GUIController.Instance.HideErrorCanvas();
                 });
             }
+
+            PhotonNetwork.JoinLobby();
         }
 
         public override void OnPlayerEnteredRoom(Player newPlayer)
