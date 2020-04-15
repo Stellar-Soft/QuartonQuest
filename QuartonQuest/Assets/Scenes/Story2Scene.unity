@@ -452,7 +452,7 @@ PrefabInstance:
         type: 3}
       propertyPath: storyText.Array.data[5]
       value: "Just then, a nearby planet loomed across the Bridge\u2019s main viewport.
-        Somehow the ships scans hadn\u2019t been able to pick it up. The Tetramechs
+        Somehow the ship's scans hadn\u2019t been able to pick it up. The Tetramechs
         worked to fly their damaged ship towards the planet. But without the ship\u2019s
         main systems functioning they couldn\u2019t control the landing and crashed
         on the surface."
@@ -460,9 +460,10 @@ PrefabInstance:
     - target: {fileID: 3415002831055993804, guid: a53c03f107c5bd14fae7593cc70ca133,
         type: 3}
       propertyPath: storyText.Array.data[6]
-      value: 'Luckily, the planet was inhabited, and by another group of Tetramechs!
-        These natives had left the Tetramechs home planet years ago in search of
-        undiscovered worlds. When they found this one, they decided to call it home. '
+      value: 'Luckily, the planet was inhabited, and the natives were a long lost
+        group of Tetramechs! These natives had left the Tetramechs'' home planet
+        years ago in search of undiscovered worlds. When they found this one, they
+        decided to call it home. '
       objectReference: {fileID: 0}
     - target: {fileID: 3415002831055993804, guid: a53c03f107c5bd14fae7593cc70ca133,
         type: 3}
@@ -472,7 +473,7 @@ PrefabInstance:
     - target: {fileID: 3415002831055993804, guid: a53c03f107c5bd14fae7593cc70ca133,
         type: 3}
       propertyPath: storyText.Array.data[8]
-      value: 'It was a planet rich with resources to help rebuild the Tetramechs
+      value: 'It was a planet rich with resources to help rebuild the Tetramechs''
         civilization. But the natives did not want to share it. So, the Tetramechs
         challenged the natives to a game of Quarto, in the hopes to win access to
         the planet. '

@@ -494,27 +494,28 @@ PrefabInstance:
         type: 3}
       propertyPath: storyText.Array.data[1]
       value: 'They have been traveling for days at light speed, but the Tetramechs
-        have ended in deep space, lost, and with fuel reserves running low. '
+        have ended up in deep space, lost, and with fuel reserves running low. '
       objectReference: {fileID: 0}
     - target: {fileID: 3415002831055993804, guid: a53c03f107c5bd14fae7593cc70ca133,
         type: 3}
       propertyPath: storyText.Array.data[0]
-      value: 'After global catastrophes that destroyed their home planet, a small
-        group of Tetramechs are in search of a new planet to call home. '
+      value: 'After global catastrophes destroyed their home planet, a small group
+        of Tetramechs are in search of a new planet to call home. '
       objectReference: {fileID: 0}
     - target: {fileID: 3415002831055993804, guid: a53c03f107c5bd14fae7593cc70ca133,
         type: 3}
       propertyPath: storyText.Array.data[2]
-      value: "In their Cargo Bay they are carrying millions of Tetramechs who uploaded
-        themselves into emergency storage when their planet\u2019s fate was all but
-        decided."
+      value: "In their Cargo Bay they are carrying the last hope for their new civilization
+        - millions of dormant Tetramech operating systems. They had uploaded themselves
+        into emergency storage devices when their planet\u2019s fate became clear."
       objectReference: {fileID: 0}
     - target: {fileID: 3415002831055993804, guid: a53c03f107c5bd14fae7593cc70ca133,
         type: 3}
       propertyPath: storyText.Array.data[3]
       value: "Suddenly, their ship is attacked by a group of Space Pirates \u2013
         villainous Tetramechs who long ago abandoned their planet to live a life
-        in space, plundering and any poor space traveler with whom they crossed paths."
+        in space, plundering and destroying any poor space travelers with whom they
+        crossed paths."
       objectReference: {fileID: 0}
     - target: {fileID: 3415002831055993804, guid: a53c03f107c5bd14fae7593cc70ca133,
         type: 3}

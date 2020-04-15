@@ -8,19 +8,21 @@ public class quickPlayMenuController : MonoBehaviour
 {
     string SceneToLoad = GUIController.SceneNames.Level1;
     AIController.DifficultySetting Difficulty = AIController.DifficultySetting.ONE;
+    bool PlayerGoesFirst = true;
 
     public void startGame_buttonClicked()
     {
         GUIController.Opponent = GUIController.OpponentType.AI;
         GUIController.AIDifficulty = Difficulty;
         GUIController.Instance.LoadScene(SceneToLoad);
+        GUIController.Instance.PlayerGoesFirst = PlayerGoesFirst;
     }
 
     public void OnSelectedPlayerFirst(bool isOn)
     {
         if (isOn)
         {
-            GUIController.Instance.PlayerGoesFirst = true;
+            PlayerGoesFirst = true;
         }
     }
 
@@ -28,7 +30,7 @@ public class quickPlayMenuController : MonoBehaviour
     {
         if (isOn)
         {
-            GUIController.Instance.PlayerGoesFirst = false;
+            PlayerGoesFirst = false;
         }
     }
 

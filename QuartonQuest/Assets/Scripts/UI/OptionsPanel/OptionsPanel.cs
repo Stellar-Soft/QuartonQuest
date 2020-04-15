@@ -1,11 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.Audio;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class OptionsPanel : MonoBehaviour
 {
+    public Slider musicSlider;
+    public Slider soundEffectsSlider;
+    public GameObject Panel;
+
+    private void Start()
+    {
+        musicSlider.value = AudioManager.instance.MusicVolume;
+        soundEffectsSlider.value = AudioManager.instance.SoundEffectsVolume;
+    }
+
     public bool OptionsPanelShowing
     {
         get
@@ -17,7 +24,6 @@ public class OptionsPanel : MonoBehaviour
             Panel.SetActive(value);
         }
     }
-    public GameObject Panel;
 
     public void OnMusicVolumeChanged(float volume)
     {

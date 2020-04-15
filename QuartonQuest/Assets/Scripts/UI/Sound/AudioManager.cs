@@ -12,8 +12,10 @@ public class AudioManager : MonoBehaviour
     public AudioMixerGroup masterMixerGroup;
     public AudioMixerGroup soundEffectsMixerGroup;
     public float FadeTime = 1;
+    public float MusicVolume { get; private set; } = 1f;
+    public float SoundEffectsVolume { get; private set; } = 1f;
 
-	public Sound[] Music;
+    public Sound[] Music;
     public Sound[] SoundEffects;
     private Sound CurrentSong;
 
@@ -122,11 +124,13 @@ public class AudioManager : MonoBehaviour
 
     public void SetMusicVolumeLevel(float value)
     {
+        MusicVolume = value;
         masterMixer.SetFloat("Volume", Mathf.Log10(Mathf.Max(value, 0.0001f)) * 20f);
     }
 
     public void SetSoundEffectsVolumeLevel(float value)
     {
+        SoundEffectsVolume = value;
         soundEffectsMixer.SetFloat("Volume", Mathf.Log10(Mathf.Max(value, 0.0001f)) * 20f);
     }
 }
