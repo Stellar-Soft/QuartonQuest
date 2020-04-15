@@ -440,7 +440,7 @@ PrefabInstance:
         type: 3}
       propertyPath: storyText.Array.data[3]
       value: After returning to their ship, the Pirates fired an ion blast at the
-        Tetramechs ship, rupturing the fuel tank which was already nearly empty.
+        Tetramechs' ship, rupturing the fuel tank which was already nearly empty.
         The ship was knocked off its course and began to spin.
       objectReference: {fileID: 0}
     - target: {fileID: 3415002831055993804, guid: a53c03f107c5bd14fae7593cc70ca133,
@@ -475,8 +475,8 @@ PrefabInstance:
       propertyPath: storyText.Array.data[8]
       value: 'It was a planet rich with resources to help rebuild the Tetramechs''
         civilization. But the natives did not want to share it. So, the Tetramechs
-        challenged the natives to a game of Quarto, in the hopes to win access to
-        the planet. '
+        challenged the natives to a game of Quarto, in the hopes of winning access
+        to the planet. '
       objectReference: {fileID: 0}
     - target: {fileID: 3415002831055993804, guid: a53c03f107c5bd14fae7593cc70ca133,
         type: 3}

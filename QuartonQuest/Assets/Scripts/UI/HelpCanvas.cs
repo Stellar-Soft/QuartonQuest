@@ -15,8 +15,8 @@ public class HelpCanvas : MonoBehaviour
     {
         "When the game begins, the player going first will select the piece for the other player to place.",
         "Next, the second player will place the piece that the first player gave them. The second player will then select another piece for the first player to place.",
-        "Continue selecting and placing pieces until one player places a piece which connects a row of 4 pieces that have at least one characteristic in common. " +
-            "This can be done horizontally, vertically, or diagonally."
+        "The game is won by the player who places a piece that connects a row of 4 pieces which have at least one characteristic in common. " +
+            "Rows of 4 can be horizontal, vertical, or diagonal."
     };
 
     private int currentIndex = 0;

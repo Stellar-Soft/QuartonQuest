@@ -527,7 +527,7 @@ PrefabInstance:
         type: 3}
       propertyPath: storyText.Array.data[5]
       value: "There is still hope though \u2013 these Pirates are notorious for giving
-        their captors a chance of escape, albeit a slim one. The Tetramechs must
+        their captives a chance of escape, albeit a slim one. The Tetramechs must
         play the Pirates in a game of Quarto. "
       objectReference: {fileID: 0}
     - target: {fileID: 3415002831055993804, guid: a53c03f107c5bd14fae7593cc70ca133,
